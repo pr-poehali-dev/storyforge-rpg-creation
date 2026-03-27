@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "GET rooms list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"rooms": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST create room",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тестовая комната",
+        "genre": "Тёмное фэнтези",
+        "description": "Тестовое описание",
+        "story_intro": "Вы стоите у ворот тёмного замка...",
+        "max_players": 4,
+        "creator": "Тест"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {"id": 0},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

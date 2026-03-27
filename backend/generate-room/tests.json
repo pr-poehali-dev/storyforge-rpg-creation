@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Generate room",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "description": "Мрачный средневековый город на краю мёртвых земель. Чума выкосила половину населения, а по ночам из трущоб доносятся стоны нежити. Игроки — наёмники, прибывшие разобраться с источником заразы.",
+        "max_players": 4
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"room": {}},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 {
+  "generate-room": "https://functions.poehali.dev/a1b34cc3-6b69-435e-9a31-87b11beed4d7",
+  "rooms-api": "https://functions.poehali.dev/a75df6e1-ba56-4835-a3d8-14476885d98b",
   "generate-character": "https://functions.poehali.dev/df212d01-256e-406b-ab5d-f9fb4a972f1d",
   "narrator": "https://functions.poehali.dev/d2cd2549-782f-4049-9c97-a56f8510a730"
 }
