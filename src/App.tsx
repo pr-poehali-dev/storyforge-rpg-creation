@@ -10,10 +10,11 @@ import RoomsPage from "./pages/RoomsPage";
 import ProfilePage from "./pages/ProfilePage";
 import FriendsPage from "./pages/FriendsPage";
 import GamePage from "./pages/GamePage";
+import CharacterCreatePage from "./pages/CharacterCreatePage";
 
 const queryClient = new QueryClient();
 
-type Page = "home" | "archive" | "rooms" | "profile" | "friends" | "game";
+type Page = "home" | "archive" | "rooms" | "profile" | "friends" | "game" | "character-create";
 
 const navItems: { id: Page; label: string; icon: string; hideInGame?: boolean }[] = [
   { id: "home", label: "Главная", icon: "Home" },
@@ -24,7 +25,7 @@ const navItems: { id: Page; label: string; icon: string; hideInGame?: boolean }[
 ];
 
 function Navigation({ current, onNavigate }: { current: Page; onNavigate: (p: Page) => void }) {
-  if (current === "game") return null;
+  if (current === "game" || current === "character-create") return null;
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 md:top-0 md:bottom-auto">
       {/* Desktop top nav */}
@@ -86,6 +87,7 @@ function PageContent({ page, onNavigate }: { page: Page; onNavigate: (p: Page) =
     case "profile": return <ProfilePage onNavigate={navigate} />;
     case "friends": return <FriendsPage onNavigate={navigate} />;
     case "game": return <GamePage onNavigate={navigate} />;
+    case "character-create": return <CharacterCreatePage onNavigate={navigate} />;
     default: return <HomePage onNavigate={navigate} />;
   }
 }
@@ -100,7 +102,7 @@ const App = () => {
         <Sonner />
         <div className="min-h-screen fantasy-bg">
           <Navigation current={currentPage} onNavigate={setCurrentPage} />
-          <div className={currentPage !== "game" ? "md:pt-[57px] pb-[64px] md:pb-0" : ""}>
+          <div className={currentPage !== "game" && currentPage !== "character-create" ? "md:pt-[57px] pb-[64px] md:pb-0" : ""}>
             <PageContent page={currentPage} onNavigate={setCurrentPage} />
           </div>
         </div>

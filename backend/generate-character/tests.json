@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Generate character",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Торин",
+        "description": "Тёмный эльф-маг, изгнанный из своего народа за изучение запрещённой некромантии. Хитрый и холодный, но верный своим союзникам."
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"character": {}},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

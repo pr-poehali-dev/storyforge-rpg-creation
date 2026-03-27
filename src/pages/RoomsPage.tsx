@@ -144,7 +144,7 @@ export default function RoomsPage({ onNavigate }: RoomsPageProps) {
                     </span>
                   </div>
                   <button
-                    onClick={() => onNavigate('game')}
+                    onClick={() => onNavigate('character-create')}
                     disabled={isFull}
                     className={`btn-outline-gold text-xs px-4 py-1.5 rounded-lg transition-opacity duration-200 ${
                       isFull ? 'opacity-40 cursor-not-allowed' : ''
