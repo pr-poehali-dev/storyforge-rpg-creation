@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Narrator generates story",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "story_title": "Пепел Эльдориана",
+        "story_history": "Герои вошли в руины древней башни.",
+        "chosen_action": "Осторожно подняться по разрушенной лестнице",
+        "players": [
+          {"name": "Мерлин", "playerClass": "Архимаг"},
+          {"name": "Леандра", "playerClass": "Паладин"}
+        ]
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"story": "string", "choices": []},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
