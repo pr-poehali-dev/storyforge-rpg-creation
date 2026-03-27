@@ -162,7 +162,7 @@ export default function GamePage({ onNavigate }: GamePageProps) {
 
           {/* Center: turn indicator */}
           <span className="text-sm text-foreground/50 font-golos shrink-0 hidden sm:block">
-            Ход {turn} из 30
+            Ход {turn}
           </span>
 
           {/* Right: players + settings */}
